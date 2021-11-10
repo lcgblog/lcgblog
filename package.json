@@ -1,0 +1,55 @@
+{
+  "name": "ezship-global-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "yarn && next -p 8100",
+    "build": "next build",
+    "start": "NODE_ENV=production next start -p 8100",
+    "docker": "./build-docker.sh",
+    "commit": "git-cz"
+  },
+  "config": {
+    "port": "8100",
+    "commitizen": {
+      "path": "cz-conventional-changelog",
+      "maxHeaderWidth": 200
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint './src/**/*.tsx'"
+    ]
+  },
+  "dependencies": {
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "next": "10.0.9",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "5.2.1",
+    "webpack": "5.28.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-decorators": "7.13.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
+    "@babel/plugin-transform-named-capturing-groups-regex": "^7.12.13",
+    "@types/node": "14.10.1",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
+    "@types/styled-components": "5.1.9",
+    "babel-plugin-styled-components": "1.12.0",
+    "babel-plugin-styled-components-px2rem": "^1.5.5",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.23.0",
+    "file-loader": "^6.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "url-loader": "4.1.1"
+  }
+}
